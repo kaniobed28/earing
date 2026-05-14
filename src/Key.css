@@ -1,0 +1,87 @@
+/* ─── White Key ────────────────────────────────────────────────────────────── */
+.key {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  transition: background 0.07s ease, transform 0.07s ease, box-shadow 0.07s ease;
+  outline: none;
+}
+
+.key--white {
+  width: 54px;
+  height: 200px;
+  background: linear-gradient(180deg, #f0f0f0 0%, #ffffff 60%);
+  border: 1px solid #aaa;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 -4px 8px rgba(0, 0, 0, 0.08);
+  color: #333;
+  z-index: 1;
+}
+
+.key--white:hover {
+  background: linear-gradient(180deg, #e3e3ff 0%, #f0f0ff 60%);
+}
+
+.key--white.key--active,
+.key--white:active {
+  background: linear-gradient(180deg, #a0a0ff 0%, #c8c8ff 60%);
+  transform: translateY(3px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Black Key ────────────────────────────────────────────────────────────── */
+.key--black {
+  width: 36px;
+  height: 120px;
+  background: linear-gradient(180deg, #222 0%, #111 100%);
+  border: 1px solid #000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), inset 0 -3px 6px rgba(255, 255, 255, 0.05);
+  color: #bbb;
+  z-index: 2;
+  margin-left: -18px;
+  margin-right: -18px;
+}
+
+.key--black:hover {
+  background: linear-gradient(180deg, #3a3a7a 0%, #22224a 100%);
+}
+
+.key--black.key--active,
+.key--black:active {
+  background: linear-gradient(180deg, #5555cc 0%, #33339a 100%);
+  transform: translateY(3px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), inset 0 -1px 3px rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Labels ───────────────────────────────────────────────────────────────── */
+.key__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.key__shortcut {
+  font-size: 9px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* ── Mobile: hide keyboard shortcut hints (no physical keyboard) ────────────── */
+@media (max-width: 600px) {
+  .key__shortcut {
+    display: none;
+  }
+
+  .key__label {
+    font-size: 8px;
+  }
+}

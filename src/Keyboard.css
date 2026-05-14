@@ -1,0 +1,56 @@
+.keyboard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 32px 40px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 20px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    /* Allow the wrapper to scale with its content */
+    width: fit-content;
+    max-width: 100%;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+    /* Fixed natural width: 10 white keys × 54px + gaps ≈ 540px */
+    width: 540px;
+}
+
+/* ── Responsive scaling ─────────────────────────────────────────────────────
+   We keep the keyboard at its natural 540px layout but scale it down on
+   narrow viewports using transform-origin so it still centres correctly.
+   The outer .keyboard-scroll-area clips and centres the scaled element.
+─────────────────────────────────────────────────────────────────────────── */
+.keyboard-scroll-area {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 16px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124, 109, 255, 0.3) transparent;
+}
+
+.keyboard-scroll-area::-webkit-scrollbar {
+    height: 4px;
+}
+
+.keyboard-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(124, 109, 255, 0.35);
+    border-radius: 99px;
+}
+
+@media (max-width: 600px) {
+    .keyboard-wrapper {
+        padding: 14px 10px 24px;
+        border-radius: 14px;
+    }
+}
