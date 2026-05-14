@@ -1,5 +1,5 @@
 import React from 'react';
-import { VOICES } from './keyboardData';
+import { VOICES } from '../data/keyboardData';
 import './VoiceSelector.css';
 
 /**

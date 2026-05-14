@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useEarTraining, pickRandomNote, TIPS } from '../useEarTraining';
-import { NOTES } from '../keyboardData';
+import { NOTES } from '../../data/keyboardData';
 
 // Stub Web Audio for the hook (it uses playNote/stopNote passed in, not AudioContext directly)
 const makeMocks = () => ({

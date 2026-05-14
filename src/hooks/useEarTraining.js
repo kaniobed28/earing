@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { NOTES } from './keyboardData';
+import { NOTES } from '../data/keyboardData';
 
 /**
  * Game phases:
@@ -105,7 +105,7 @@ export function useEarTraining({ timeLimit = 5, playNote, stopNote }) {
                 setPhase('timeout');
             }
         }, 1000);
-    }, [clearTimers, timeLimit, playTarget]);
+    }, [clearTimers, timeLimit, playTarget, stopNote]);
 
     /** Called when user presses a key while in 'listening' phase */
     const submitAnswer = useCallback(

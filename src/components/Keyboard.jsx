@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import { NOTES } from './keyboardData';
-import { useAudio } from './useAudio';
-import { useKeyboardInput } from './useKeyboardInput';
+import { NOTES } from '../data/keyboardData';
+import { useAudio } from '../hooks/useAudio';
+import { useKeyboardInput } from '../hooks/useKeyboardInput';
 import { Key } from './Key';
 import './Keyboard.css';
 
