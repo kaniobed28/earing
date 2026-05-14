@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { KEY_MAP } from './keyboardData';
+import { KEY_MAP } from '../data/keyboardData';
 
 /**
  * Listens for keydown / keyup events and calls playNote / stopNote accordingly.

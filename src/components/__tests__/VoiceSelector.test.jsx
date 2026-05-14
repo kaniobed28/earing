@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { VoiceSelector } from '../VoiceSelector';
-import { VOICES } from '../keyboardData';
+import { VOICES } from '../../data/keyboardData';
 
 describe('VoiceSelector component', () => {
     it('renders a button for each available voice', () => {
