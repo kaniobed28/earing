@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import { Keyboard } from '../Keyboard';
 
 // Mock useAudio so no real AudioContext is created in tests
-vi.mock('../useAudio', () => ({
+vi.mock('../../hooks/useAudio', () => ({
     useAudio: () => ({
         playNote: vi.fn(),
         stopNote: vi.fn(),

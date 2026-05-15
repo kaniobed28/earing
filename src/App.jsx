@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useCallback, useRef } from 'react';
 import { Keyboard } from './Keyboard';
 import { VoiceSelector } from './VoiceSelector';
@@ -5,6 +6,15 @@ import { EarTraining } from './EarTraining';
 import { useAudio } from './useAudio';
 import { useEarTraining } from './useEarTraining';
 import { DEFAULT_VOICE } from './keyboardData';
+=======
+import React, { useState, useCallback } from 'react';
+import { Keyboard } from './components/Keyboard';
+import { VoiceSelector } from './components/VoiceSelector';
+import { EarTraining } from './components/EarTraining';
+import { useAudio } from './hooks/useAudio';
+import { useEarTraining } from './hooks/useEarTraining';
+import { DEFAULT_VOICE } from './data/keyboardData';
+>>>>>>> 4540bd0
 import './App.css';
 
 // Time limit options (seconds)
