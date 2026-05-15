@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { NOTES } from '../data/keyboardData';
+import { getRandom } from '../utils/crypto';
 
 /**
  * Game phases:
@@ -15,7 +16,7 @@ const WHITE_NOTES = NOTES.filter((n) => n.type === 'white');
 
 function pickRandomNote(exclude = null) {
     const pool = exclude ? NOTES.filter((n) => n.id !== exclude) : NOTES;
-    return pool[Math.floor(Math.random() * pool.length)];
+    return pool[Math.floor(getRandom() * pool.length)];
 }
 
 /** Tips that help the user identify a note by ear. */
@@ -34,7 +35,7 @@ export const TIPS = [
 
 function pickRandomTip(exclude = null) {
     const pool = exclude ? TIPS.filter((t) => t !== exclude) : TIPS;
-    return pool[Math.floor(Math.random() * pool.length)];
+    return pool[Math.floor(getRandom() * pool.length)];
 }
 
 /**
