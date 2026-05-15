@@ -22,13 +22,25 @@ function buildReverb(ctx, duration = 2.0, decay = 2.5) {
     const sampleRate = ctx.sampleRate;
     const length = Math.floor(sampleRate * duration);
     const impulse = ctx.createBuffer(2, length, sampleRate);
-    for (let c = 0; c < 2; c++) {
-        const channel = impulse.getChannelData(c);
+    const left = impulse.getChannelData(0);
+    const right = impulse.getChannelData(1);
+    const invLength = 1 / length;
+
+    if (decay === 2.5) {
         for (let i = 0; i < length; i++) {
-            channel[i] =
-                (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+            const x = 1 - i * invLength;
+            const envelope = x * x * Math.sqrt(x);
+            left[i] = (Math.random() * 2 - 1) * envelope;
+            right[i] = (Math.random() * 2 - 1) * envelope;
+        }
+    } else {
+        for (let i = 0; i < length; i++) {
+            const envelope = Math.pow(1 - i * invLength, decay);
+            left[i] = (Math.random() * 2 - 1) * envelope;
+            right[i] = (Math.random() * 2 - 1) * envelope;
         }
     }
+
     const convolver = ctx.createConvolver();
     convolver.buffer = impulse;
     return convolver;
